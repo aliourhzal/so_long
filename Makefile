@@ -9,6 +9,9 @@ all: $(NAME)
 $(NAME): $(OBJ) $(MAINOBJ)
 	cc -lmlx -framework OpenGL -framework AppKit  $(OBJ) $(MAINOBJ) -o so_long
 
+## for linux
+#cc $(OBJ) $(MAINOBJ) libmlx_Linux.a -lmlx -lbsd -lmlx -lXext -lX11 -lm -o so_long
+
 $(OBJ): $(SRC) ./get_next_line/get_next_line.h
 	cc -Wall -Werror -Wextra -c $(SRC)
 
